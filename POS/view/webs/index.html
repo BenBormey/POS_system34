@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Menu</title>
+    <link rel="stylesheet" href="template.css">
+</head>
+<style>
+   * { margin: 0; padding: 0; box-sizing: border-box; }
+body { padding: 30px; }
+#hamburgerMenu {
+    position: relative;
+    background-color: blueviolet;
+    display: block;
+}
+
+ #hamburgerMenu input[type="checkbox"]#chkMenu {
+    display: none;
+}
+#hamburgerMenu input[type="checkbox"]#chkMenu + label {
+    position: relative; width: 40px; height: 30px;
+    display: block; border: 1px dashed grey;
+    cursor: pointer;
+}
+
+#hamburgerMenu input[type="checkbox"]#chkMenu:checked + label {
+    border: 1px solid black;
+}
+#hamburgerMenu input[type="checkbox"]#chkMenu + label div[class^="line"] {
+    left: 7px; right: 7px; position: absolute;
+    background-color: black; height: 2px; 
+    border-radius: 4px; transition: all cubic-bezier(0.47,-0.59, 0.42, 1.45) 400ms;
+}
+
+#hamburgerMenu input[type="checkbox"]#chkMenu + label div[class="line1"] {
+    top: 6px;
+}
+#hamburgerMenu input[type="checkbox"]#chkMenu + label div[class="line2"] {
+    top: 14px; height: 1px;
+}
+#hamburgerMenu input[type="checkbox"]#chkMenu + label div[class="line3"] {
+    top: 21px;
+}
+
+#hamburgerMenu input[type="checkbox"]#chkMenu:checked + label div[class="line1"] {
+    top: 13px; transform: rotate(135deg);
+}
+#hamburgerMenu input[type="checkbox"]#chkMenu:checked + label div[class="line2"] {
+    opacity: 0; transform: rotate(-135deg);
+}
+#hamburgerMenu input[type="checkbox"]#chkMenu:checked + label div[class="line3"] {
+    top: 13px; transform: rotate(-135deg);
+}
+#hamburgerMenu #allinnk{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    margin: 0px 100px;
+    
+}
+#hamburgerMenu input[type="checkbox"]#chkMenu ~ #allinnk{
+    position: absolute;
+    z-index: 100;
+    top: -500px;
+    transition: ease-in-out 500ms;
+}
+#hamburgerMenu input[type="checkbox"]#chkMenu:checked ~ #allinnk{
+ 
+    top: 0;
+
+}
+#hamburgerMenu input[type="checkbox"]#chkMenu:checked ~ #allinnk ul {
+ justify-content: space-between;
+
+}
+
+#hamburgerMenu input[type="checkbox"]#chkMenu:checked ~ #allinnk ul li{
+ 
+ list-style: none;
+
+}
+
+
+
+/*
+#hamburgerMenu input[type="checkbox"]#chkMenu ~ #allLinks ul li{
+    list-style-type: none; border-bottom: 1px solid lightcyan;
+}
+
+#hamburgerMenu input[type="checkbox"]#chkMenu ~ #allLinks ul li a{
+    text-decoration: none; color:  white;
+    background-color: darkcyan; padding: 10px 22px;
+    width: 200px; display: block; font: 14px sans-serif;
+    letter-spacing: 1px; transition: all ease-in-out 400ms;
+}
+#hamburgerMenu input[type="checkbox"]#chkMenu ~ #allLinks ul li a:hover{
+    background-color: cyan; color: black;
+    padding-left: 30px; transform: scale(1.05);
+} */
+ 
+</style>
+<body>
+    <div id="hamburgerMenu">
+        <input type="checkbox" name="chkMenu" id="chkMenu">
+        <label for="chkMenu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </label>
+        <div id="allinnk">
+
+  
+        <div id="allLinks">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Special Promotions</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div id="allLinks">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Special Promotions</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div id="allLinks">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Special Promotions</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
